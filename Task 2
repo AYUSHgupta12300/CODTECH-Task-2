@@ -1,0 +1,115 @@
+class Student:
+    def _init_(self, name, student_id):
+        self.name = name
+        self.student_id = student_id
+        self.grades = {}
+
+    def add_grade(self, subject, grade):
+        if 0 <= grade <= 100:
+            self.grades[subject] = grade
+            print(f"Grade {grade} added for {subject}.")
+        else:
+            print("Invalid grade. Please enter a value between 0 and 100.")
+
+    def calculate_average(self):
+        if self.grades:
+            return sum(self.grades.values()) / len(self.grades)
+        else:
+            return 0.0
+
+    def get_letter_grade(self):
+        average = self.calculate_average()
+        if average >= 90:
+            return "A"
+        elif average >= 80:
+            return "B"
+        elif average >= 70:
+            return "C"
+        elif average >= 60:
+            return "D"
+        else:
+            return "F"
+
+    def get_gpa(self):
+        letter_grade = self.get_letter_grade()
+        gpa_scale = {"A": 4.0, "B": 3.0, "C": 2.0, "D": 1.0, "F": 0.0}
+        return gpa_scale[letter_grade]
+
+    def display_info(self):
+        print(f"Name: {self.name}")
+        print(f"Student ID: {self.student_id}")
+        print("Grades:")
+        for subject, grade in self.grades.items():
+            print(f"  {subject}: {grade}")
+        average = self.calculate_average()
+        print(f"Average Grade: {average:.2f}")
+        print(f"Letter Grade: {self.get_letter_grade()}")
+        print(f"GPA: {self.get_gpa():.2f}")
+
+
+class GradeTracker:
+    def _init_(self):
+        self.students = {}
+
+    def add_student(self, name, student_id):
+        if student_id not in self.students:
+            self.students[student_id] = Student(name, student_id)
+            print(f"Student {name} added.")
+        else:
+            print("Student ID already exists.")
+
+    def add_grade(self, student_id, subject, grade):
+        if student_id in self.students:
+            self.students[student_id].add_grade(subject, grade)
+        else:
+            print("Student ID not found.")
+
+    def display_student(self, student_id):
+        if student_id in self.students:
+            self.students[student_id].display_info()
+        else:
+            print("Student ID not found.")
+
+    def display_all_students(self):
+        for student in self.students.values():
+            student.display_info()
+            print("-" * 20)
+
+
+# Main Program
+def main():
+    tracker = GradeTracker()
+    while True:
+        print("\n1. Add Student")
+        print("2. Add Grade")
+        print("3. Display Student Info")
+        print("4. Display All Students")
+        print("5. Exit")
+
+        choice = input("Enter your choice: ")
+        if choice == '1':
+            name = input("Enter student name: ")
+            student_id = input("Enter student ID: ")
+            tracker.add_student(name, student_id)
+        elif choice == '2':
+            student_id = input("Enter student ID: ")
+            subject = input("Enter subject: ")
+            try:
+                grade = float(input("Enter grade (0-100): "))
+                tracker.add_grade(student_id, subject, grade)
+            except ValueError:
+                print("Invalid input. Please enter a numeric grade.")
+        elif choice == '3':
+            student_id = input("Enter student ID: ")
+            tracker.display_student(student_id)
+        elif choice == '4':
+            tracker.display_all_students()
+        elif choice == '5':
+            print("Exiting program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
+if _name_ == "_main_":
+    main()
