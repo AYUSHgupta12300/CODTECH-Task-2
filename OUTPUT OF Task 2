@@ -1,0 +1,108 @@
+1. Add Student
+2. Add Grade
+3. Display Student Info
+4. Display All Students
+5. Exit
+
+Enter your choice: 1
+Enter student name: John Doe
+Enter student ID: 101
+Student John Doe added.
+
+1. Add Student
+2. Add Grade
+3. Display Student Info
+4. Display All Students
+5. Exit
+
+Enter your choice: 2
+Enter student ID: 101
+Enter subject: Mathematics
+Enter grade (0-100): 85
+Grade 85 added for Mathematics.
+
+1. Add Student
+2. Add Grade
+3. Display Student Info
+4. Display All Students
+5. Exit
+
+Enter your choice: 2
+Enter student ID: 101
+Enter subject: Physics
+Enter grade (0-100): 92
+Grade 92 added for Physics.
+
+1. Add Student
+2. Add Grade
+3. Display Student Info
+4. Display All Students
+5. Exit
+
+Enter your choice: 3
+Enter student ID: 101
+Name: John Doe
+Student ID: 101
+Grades:
+  Mathematics: 85
+  Physics: 92
+Average Grade: 88.50
+Letter Grade: B
+GPA: 3.00
+
+1. Add Student
+2. Add Grade
+3. Display Student Info
+4. Display All Students
+5. Exit
+
+Enter your choice: 1
+Enter student name: Jane Smith
+Enter student ID: 102
+Student Jane Smith added.
+
+1. Add Student
+2. Add Grade
+3. Display Student Info
+4. Display All Students
+5. Exit
+
+Enter your choice: 2
+Enter student ID: 102
+Enter subject: Biology
+Enter grade (0-100): 78
+Grade 78 added for Biology.
+
+1. Add Student
+2. Add Grade
+3. Display Student Info
+4. Display All Students
+5. Exit
+
+Enter your choice: 4
+Name: John Doe
+Student ID: 101
+Grades:
+  Mathematics: 85
+  Physics: 92
+Average Grade: 88.50
+Letter Grade: B
+GPA: 3.00
+--------------------
+Name: Jane Smith
+Student ID: 102
+Grades:
+  Biology: 78
+Average Grade: 78.00
+Letter Grade: C
+GPA: 2.00
+--------------------
+
+1. Add Student
+2. Add Grade
+3. Display Student Info
+4. Display All Students
+5. Exit
+
+Enter your choice: 5
+Exiting program.
